@@ -1,0 +1,207 @@
+﻿<Page
+    x:Class="SpotlightImage.Window.HostPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="using:SpotlightImage.Window.Core"
+    xmlns:window="using:SpotlightImage.Window"
+    xmlns:views="using:SpotlightImage.Window.Views"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style
+            x:Key="SystemAssetsFontIconStyle"
+            TargetType="FontIcon">
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+            <Setter Property="Foreground" Value="{ThemeResource AppBarItemForegroundThemeBrush}" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <Style
+            x:Key="MenuPaneRadioButtonStyle"
+            TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="{ThemeResource SystemBaseMediumColor}" />
+            <Setter Property="Padding" Value="12,8" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="UseSystemFocusVisuals" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate
+                        TargetType="RadioButton">
+                        <Grid
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                x:Name="HoverBorder"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Background="{ThemeResource RadioButtonPointerOverBackgroundThemeBrush}"
+                                Visibility="Collapsed"
+                            />
+                            <ContentPresenter
+                                x:Name="NixonGlyph"
+                                Grid.Column="0"
+                            />
+                            <ContentPresenter
+                                x:Name="ContentPresenter"
+                                AutomationProperties.AccessibilityView="Raw"
+                                Grid.Column="1"
+                                Foreground="{ThemeResource RadioButtonContentForegroundThemeBrush}"
+                                Background="Transparent"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTransitions="{TemplateBinding ContentTransitions}"
+                                Content="{TemplateBinding Tag}"
+                                Margin="4,0,0,0"
+                            />
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver">
+                                        <!--<VisualState.Setters>
+                                            <Setter Target="HoverBorder.Opacity" Value="1" />
+                                        </VisualState.Setters>-->
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames
+                                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                Storyboard.TargetName="HoverBorder">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <!--<ObjectAnimationUsingKeyFrames
+                                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                Storyboard.TargetName="CheckedHoverBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>-->
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <!--<Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PressedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckedPressedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>-->
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                        <!--<Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NixonGlyph" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource RadioButtonContentDisabledForegroundThemeBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource RadioButtonContentDisabledForegroundThemeBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>-->
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <!--<Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>-->
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked" />
+                                        <VisualState x:Name="Indeterminate" />
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <!--<Storyboard>
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="FocusVisualWhite" Storyboard.TargetProperty="Opacity" To="1" />
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="FocusVisualBlack" Storyboard.TargetProperty="Opacity" To="1" />
+                                        </Storyboard>-->
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused" />
+                                        <VisualState x:Name="PointerFocused" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <RelativePanel
+            Grid.Column="0">
+            <RadioButton
+                x:Name="BackgroundButton"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Tag="Background"
+                Style="{StaticResource MenuPaneRadioButtonStyle}">
+                <RadioButton.Command>
+                    <core:NavigationCommand
+                        TargetPage="views:MainPage"
+                        NavigationFrame="{Binding ElementName=HostFrame}"
+                    />
+                </RadioButton.Command>
+                <RadioButton.Content>
+                    <FontIcon
+                        Style="{StaticResource SystemAssetsFontIconStyle}"
+                        Glyph="&#xEB9F;"
+                    />
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton
+                RelativePanel.Below="{Binding ElementName=BackgroundButton}"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Tag="Lock Screen"
+                Style="{StaticResource MenuPaneRadioButtonStyle}">
+                <RadioButton.Command>
+                    <core:NavigationCommand
+                        TargetPage="views:LockScreenOptionsPage"
+                        NavigationFrame="{Binding ElementName=HostFrame}"
+                    />
+                </RadioButton.Command>
+                <RadioButton.Content>
+                    <FontIcon
+                        Style="{StaticResource SystemAssetsFontIconStyle}"
+                        Glyph="&#xEB9F;"
+                    />
+                </RadioButton.Content>
+            </RadioButton>
+        </RelativePanel>
+        <Frame
+            x:Name="HostFrame"
+            x:FieldModifier="public"
+            Grid.Column="1"
+        />
+    </Grid>
+</Page>
+

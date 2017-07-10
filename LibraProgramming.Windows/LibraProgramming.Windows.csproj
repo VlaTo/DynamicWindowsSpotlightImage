@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BB17724-881E-4C76-9DDE-15EB189F23E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibraProgramming.Windows</RootNamespace>
+    <AssemblyName>LibraProgramming.Windows</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Async\AsyncConditionVariable.cs" />
+    <Compile Include="Async\AsyncCountdownEvent.cs" />
+    <Compile Include="Async\AsyncLock.cs" />
+    <Compile Include="Async\AsyncProducerConsumerQueue.cs" />
+    <Compile Include="Async\AsyncProducerConsumerQueueExtension.cs" />
+    <Compile Include="Async\AsyncReaderWriterLock.cs" />
+    <Compile Include="Async\AsyncSemaphore.cs" />
+    <Compile Include="Async\AsyncWaitQueue.cs" />
+    <Compile Include="Async\AsyncWaitQueueExtension.cs" />
+    <Compile Include="Async\AwaitableDisposable.cs" />
+    <Compile Include="Async\DeferralManager.cs" />
+    <Compile Include="Async\Deque.cs" />
+    <Compile Include="Async\EventAsync.cs" />
+    <Compile Include="Async\FrameworkElementExtension.cs" />
+    <Compile Include="Async\IAsyncWaitQueue.cs" />
+    <Compile Include="Async\IdManager.cs" />
+    <Compile Include="Async\IReaderLockProvider.cs" />
+    <Compile Include="Async\IReaderWriterLock.cs" />
+    <Compile Include="Async\IWriterLockProvider.cs" />
+    <Compile Include="Async\SemaphoreSlimExtension.cs" />
+    <Compile Include="Collections\CallbackFilter.cs" />
+    <Compile Include="Collections\ICollectionFilter.cs" />
+    <Compile Include="Collections\ItemCollectionBase.cs" />
+    <Compile Include="Collections\ObservableVector.cs" />
+    <Compile Include="Collections\SourceCollectionView.CollectionView.cs" />
+    <Compile Include="Collections\SourceCollectionView.cs" />
+    <Compile Include="Collections\SourceCollectionView.FilteredEnumerator.cs" />
+    <Compile Include="Collections\SourceCollectionView.PlainEnumerator.cs" />
+    <Compile Include="Collections\SourceCollectionView.SourceIterator.cs" />
+    <Compile Include="Commands\AsynchronousCommand.cs" />
+    <Compile Include="Commands\AsynchronousCommandBase.cs" />
+    <Compile Include="Commands\AsyncRelayCommand.cs" />
+    <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Commands\ICancelRequired.cs" />
+    <Compile Include="Commands\NavigateToPageCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converters\Case.cs" />
+    <Compile Include="Converters\CompositeConverter.cs" />
+    <Compile Include="Converters\ConverterEventArgs.cs" />
+    <Compile Include="Converters\ICompositeConverter.cs" />
+    <Compile Include="Converters\IInlineConverter.cs" />
+    <Compile Include="Converters\InlineConverter.cs" />
+    <Compile Include="Converters\ISwitchConverter.cs" />
+    <Compile Include="Converters\SwitchConverter.cs" />
+    <Compile Include="Dependency\ConstrainedPropertyMetadata.cs" />
+    <Compile Include="Dependency\DependencyDictionary.cs" />
+    <Compile Include="Dependency\IDependecyObservablePropertyBuilder.cs" />
+    <Compile Include="Dependency\IDependentObservablePropertyBuilder.cs" />
+    <Compile Include="Dependency\IObservableDependencyTracker.cs" />
+    <Compile Include="Dependency\IObservableModelSubscription.cs" />
+    <Compile Include="Dependency\IObservablePropertyDependency.cs" />
+    <Compile Include="Dependency\IObservablePropertyTrackerBuilder.cs" />
+    <Compile Include="Dependency\IObservablePropertyTrackerSubscription.cs" />
+    <Compile Include="Dependency\ObservableProperty.cs" />
+    <Compile Include="Dependency\ObservablePropertyDependency.cs" />
+    <Compile Include="Dependency\ObservablePropertyException.cs" />
+    <Compile Include="Dependency\ObservablePropertyHelper.cs" />
+    <Compile Include="Dependency\ObservablePropertyMetadata.cs" />
+    <Compile Include="Dependency\ObservablePropertyTracker.cs" />
+    <Compile Include="Dependency\ObservablePropertyTrackerBuilder.cs" />
+    <Compile Include="Dependency\ObservablePropertyTrackerException.cs" />
+    <Compile Include="Dependency\ObservingPropertyBuilder.cs" />
+    <Compile Include="Dependency\PropertyKey.cs" />
+    <Compile Include="Dependency\PropertyPath.cs" />
+    <Compile Include="Dependency\PropertyPathComparer.cs" />
+    <Compile Include="Dependency\Tracking\DependencySubscription.cs" />
+    <Compile Include="Dependency\Tracking\DependencyTracker.cs" />
+    <Compile Include="Dependency\Tracking\DependencyTracker.DependencyTrackerBuilder.cs" />
+    <Compile Include="Dependency\Tracking\DependentPropertyBuilder.cs" />
+    <Compile Include="Dependency\Tracking\IDependencyPropertySelector.cs" />
+    <Compile Include="Dependency\Tracking\IDependencyTracker.cs" />
+    <Compile Include="Dependency\Tracking\IDependencyTrackerBuilder.cs" />
+    <Compile Include="Dependency\Tracking\IDependencyTracketSubscription.cs" />
+    <Compile Include="Dependency\Tracking\IDependentPropertyBuilder.cs" />
+    <Compile Include="Dependency\Tracking\PropertyDependency.cs" />
+    <Compile Include="DisposableToken.cs" />
+    <Compile Include="GenericDataTemplateSelector.cs" />
+    <Compile Include="Infrastructure\AggregatedCancellationToken.cs" />
+    <Compile Include="Infrastructure\CancellationTokenHelper.cs" />
+    <Compile Include="Infrastructure\ExceptionHelper.cs" />
+    <Compile Include="Infrastructure\IActivationRequired.cs" />
+    <Compile Include="Infrastructure\IAwaitable.cs" />
+    <Compile Include="Infrastructure\ICleanupRequired.cs" />
+    <Compile Include="Infrastructure\IDeferrable.cs" />
+    <Compile Include="Infrastructure\IDeferrableRefresh.cs" />
+    <Compile Include="Infrastructure\IDeferred.cs" />
+    <Compile Include="Infrastructure\INavigationRequired.cs" />
+    <Compile Include="Infrastructure\IObjectBuilder.cs" />
+    <Compile Include="Infrastructure\ISetupRequired.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\IVisitor.cs" />
+    <Compile Include="Infrastructure\RefreshDeferToken.cs" />
+    <Compile Include="Infrastructure\TaskCompletionSource.cs" />
+    <Compile Include="Infrastructure\TaskCompletionSourceExtension.cs" />
+    <Compile Include="Infrastructure\TaskExtension.cs" />
+    <Compile Include="Infrastructure\TypedWeakEventHandler.cs" />
+    <Compile Include="Infrastructure\WeakAction.cs" />
+    <Compile Include="Infrastructure\WeakDelegate.cs" />
+    <Compile Include="Infrastructure\WeakDelegateBase.cs" />
+    <Compile Include="Infrastructure\WeakEvent.cs" />
+    <Compile Include="Infrastructure\WeakEventHandler.cs" />
+    <Compile Include="Infrastructure\WeakEventListener.cs" />
+    <Compile Include="Infrastructure\WeakFunc.cs" />
+    <Compile Include="Infrastructure\WeakPredicate.cs" />
+    <Compile Include="Messaging\BackgroundTaskEventSubscription.cs" />
+    <Compile Include="Messaging\DispatcherEventSubscription.cs" />
+    <Compile Include="Messaging\Event.cs" />
+    <Compile Include="Messaging\EventBase.cs" />
+    <Compile Include="Messaging\EventMessenger.cs" />
+    <Compile Include="Messaging\EventSubscription.cs" />
+    <Compile Include="Messaging\IActionReference.cs" />
+    <Compile Include="Messaging\IEventMessenger.cs" />
+    <Compile Include="Messaging\IEventSubscription.cs" />
+    <Compile Include="Messaging\IPredicateReference.cs" />
+    <Compile Include="Messaging\StrongActionReference.cs" />
+    <Compile Include="Messaging\StrongPredicateReference.cs" />
+    <Compile Include="Messaging\SubscriptionToken.cs" />
+    <Compile Include="Messaging\WeakActionReference.cs" />
+    <Compile Include="Messaging\WeakPredicateReference.cs" />
+    <Compile Include="Navigations\IPageNavigationProvider.cs" />
+    <Compile Include="Navigations\NavigateToPageAction.cs" />
+    <Compile Include="Navigations\PageNavigation.cs" />
+    <Compile Include="Navigations\PageNavigationException.cs" />
+    <Compile Include="ObservableModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
+    <Compile Include="StateMachine\IStateConfigurator.cs" />
+    <Compile Include="StateMachine\StateConfigurator.cs" />
+    <Compile Include="StateMachine\StateDescriptor.cs" />
+    <Compile Include="StateMachine\StateMachine.cs" />
+    <Compile Include="StateMachine\StateMachineException.cs" />
+    <Compile Include="StateMachine\StateMachineExtension.cs" />
+    <Compile Include="StateMachine\StateTransition.cs" />
+    <Compile Include="TaskExtensions.cs" />
+    <EmbeddedResource Include="Properties\LibraProgramming.Windows.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>5.2.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
